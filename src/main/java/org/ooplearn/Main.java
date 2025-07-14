@@ -9,12 +9,12 @@ public  class Main {
         // 2. Declare the User Object
         Scanner input = new Scanner(System.in);
         User user = new User();
-        Integer id;
+        int id;
         String name;
         String password;
         System.out.print("Enter your Id: ");
-        // 3. input nextline take and sting to we connverted to Integer
-         id = Integer.valueOf(input.nextLine());
+        // 3. input next line take and sting to we connverted to Integer
+         id = Integer.parseInt(input.nextLine());
 
         // 4. Instantiate User and set the name
 
