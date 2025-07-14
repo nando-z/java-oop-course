@@ -3,7 +3,7 @@ package org.ooplearn;
 import org.ooplearn.encapsulation.User;
 import java.util.Scanner;
 
-public class Main {
+public  class Main {
     public static void main(String[] args) {
         // 1. Create a Scanner to read from standard input
         // 2. Declare the User Object
@@ -15,6 +15,7 @@ public class Main {
         System.out.print("Enter your Id: ");
         // 3. input nextline take and sting to we connverted to Integer
          id = Integer.valueOf(input.nextLine());
+
 
         // 4. Instantiate User and set the name
 
@@ -31,7 +32,7 @@ public class Main {
         user.setPassword(password);
         System.out.printf("Hello, %s%n", user.getName());
         System.out.printf("Your Id : %s%n", user.getId());
-        System.out.printf("Than Your Password Should be: %s%n", user.getPassword());
+        System.out.printf("Than Your Hashad Password Is: %s%n", user.getPasswordHash());
 
         input.close();
     }
