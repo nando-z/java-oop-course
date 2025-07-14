@@ -19,6 +19,5 @@ jobs:
           java-version: '21'
           distribution: 'adopt'
 
-      - run : gradlew build
       - run : gradlew test
 
