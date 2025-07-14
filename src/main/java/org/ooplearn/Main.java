@@ -31,7 +31,7 @@ public  class Main {
         user.setPassword(password);
         System.out.printf("Hello, %s%n", user.getName());
         System.out.printf("Your Id : %s%n", user.getId());
-        System.out.printf("Than Your Hashad Password Is: %s%n", user.getPasswordHash());
+        System.out.printf("Than Your Hash Password Is: %s%n", user.getPasswordHash());
 
         input.close();
     }
