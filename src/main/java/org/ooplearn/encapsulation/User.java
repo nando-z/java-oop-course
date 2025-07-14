@@ -12,7 +12,6 @@ public class User {
     private String salt;
     private String passwordHash;
 
-
     private static String generateSalt() {
         try {
             SecureRandom sr = SecureRandom.getInstanceStrong();
@@ -23,7 +22,6 @@ public class User {
             throw new IllegalStateException("Secure RNG not available", e);
         }
     }
-
 
     private static String hashWithSHA256(String password, String salt) {
         try {
@@ -36,31 +34,22 @@ public class User {
         }
     }
 
-    // GETTERS AND SETTERS FOR id AND name
-
     public Integer getId() {
         return id;
     }
-
     public void setId(Integer id) {
         this.id = id;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
-    // SETTER FOR raw password, generates salt and hash
     public void setPassword(String rawPassword) {
         this.salt = generateSalt();
         this.passwordHash = hashWithSHA256(rawPassword, this.salt);
     }
-
-    // VERIFY LOGIN ATTEMPT
     public boolean checkPassword(String attempt) {
         String attemptHash = hashWithSHA256(attempt, this.salt);
         return attemptHash.equals(this.passwordHash);
@@ -71,3 +60,4 @@ public class User {
         return passwordHash;
     }
 }
+
