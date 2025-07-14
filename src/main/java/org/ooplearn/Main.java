@@ -16,7 +16,6 @@ public  class Main {
         // 3. input nextline take and sting to we connverted to Integer
          id = Integer.valueOf(input.nextLine());
 
-
         // 4. Instantiate User and set the name
 
         user.setId(id);

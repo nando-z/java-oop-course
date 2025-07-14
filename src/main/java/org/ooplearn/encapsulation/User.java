@@ -9,12 +9,10 @@ public class User {
 
     private Integer id;
     private String name;
-
-    // New fields to hold salt and hashed password
     private String salt;
     private String passwordHash;
 
-    // Generate a secure random salt
+
     private static String generateSalt() {
         try {
             SecureRandom sr = SecureRandom.getInstanceStrong();
@@ -26,7 +24,7 @@ public class User {
         }
     }
 
-    // Compute SHA-256 hash of salt + password
+
     private static String hashWithSHA256(String password, String salt) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -56,7 +54,7 @@ public class User {
         this.name = name;
     }
 
-    // SETTER FOR raw password, generates salt + hash
+    // SETTER FOR raw password, generates salt and hash
     public void setPassword(String rawPassword) {
         this.salt = generateSalt();
         this.passwordHash = hashWithSHA256(rawPassword, this.salt);
